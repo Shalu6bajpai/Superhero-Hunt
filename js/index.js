@@ -35,7 +35,6 @@ const Main= (function(){
                             <div class="name">${element.name}</div>
                         </a>
                         <div class="full-name">${element.biography['full-name']}</div>
-
                         <div class="address">${element.biography['place-of-birth']}</div>
                         <button class="btn add-to-fav" data-id=${element.id} style="display: ${indexOfSuperHeroInFav === -1 ? 'block':'none'}">
                             Add to favourites

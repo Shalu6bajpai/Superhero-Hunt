@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperHero</title>
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!---Google font for font-->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Superhero.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <!------Navigation Bar/Title ------>
+    <div class="header">
+        <div class="title">
+            <span>SuperHero Hunt</span>
+        </div>
+        <div class="navigation">
+            <a href="./index.html">HOME</a>&emsp;&emsp;&emsp;
+            <a href="https://github.com/Shalu6bajpai/Superhero-Hunt">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+
+    <!---display Fav. Superheros----> 
+    <main class="main">
+
+        <!---Display loading-->
+        <div class="loader"></div>
+        
+        <ul id="search-result-list">
+            <!---Show our search results-->
+        </ul>
+    </main>
+
+    
+
+    <!--Js files-->
+    <script src="./js/use.js"></script>
+    <script src="./js/favourites.js"></script>
+    <script>
+        Fav.init();
+    </script>
+</body>
+</html>

@@ -111,7 +111,7 @@ function handleDocumentClick(e) {
 }
 
 function init(){
-    search.addEventListener('keyup', Common.debounce(handleSearch, 500));
+    search.addEventListener('keyup', Common.time(handleSearch, 500));
     document.addEventListener('click', handleDocumentClick);
 }
 

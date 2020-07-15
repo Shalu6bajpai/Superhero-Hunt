@@ -2,7 +2,7 @@
 SuperHero Hunt website is plain static website built upon HTML,CSS & javascript for all Superheroes in the Universe.
 
 #Link for the Website:
-https://amanrai24.github.io/SuperHero_Hunt_JS/index.html
+https://shalu6bajpai.github.io/Superhero-Hunt/index.html
 
 #API used: https://superheroapi.com/
 

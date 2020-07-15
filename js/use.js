@@ -1,7 +1,7 @@
 const Common= (function(){
-    const apiToken= '1596968633792292';
+    const apiToken= '1234866066855831';
     const apiUrl= `https://www.superheroapi.com/api.php/${apiToken}/`;
-    
+    const toastContainer = document.getElementById('toast');
     const FAVOURITES = 'favourites';
     const loader = document.querySelector('.loader');
 
@@ -14,7 +14,7 @@ const Common= (function(){
         loader.style.display = 'none';
     }
 
-    // sending api Request using async
+    // sending api Request using async-----
     async function apiRequest(url){
         try{
             const response= await fetch(url);
@@ -47,7 +47,7 @@ const Common= (function(){
             FAVOURITES,
             JSON.stringify(getFavourites)
         );
-        showNotification('success', 'Added to favourites');
+        
     }
 
     // Remove superHero from Storage
@@ -59,8 +59,6 @@ const Common= (function(){
 
         let getFavourites = getFavouriteSuperheroes();
 
-
-
         // Remove superhero from storage
         getFavourites = getFavourites.filter(
             (item) => item.id !== heroId
@@ -70,11 +68,11 @@ const Common= (function(){
             FAVOURITES,
             JSON.stringify(getFavourites)
         );
-   }
 
-    
-   
-   // Display all favourite Heros
+      
+    }
+
+    // Display all favourite Heros
     function getFavouriteSuperheroes() {
         return localStorage.getItem(FAVOURITES)
           ? JSON.parse(localStorage.getItem(FAVOURITES))
@@ -82,7 +80,22 @@ const Common= (function(){
     }
 
      
+    // very important function if debounce api fetch
+    function time(func, delay) {
+        let timeout;
+        return function () {
+          const context = this;
+          const args = arguments;
     
+          clearTimeout(timeout);
+    
+          timeout = setTimeout(function () {
+            timeout = null;
+            func.apply(context, args);
+          }, delay);
+        };
+    }
+
     return{
         apiUrl,
         showLoader,
@@ -91,5 +104,6 @@ const Common= (function(){
         addHero,
         removeHero,
         getFavouriteSuperheroes,
+        time
     }
 })();
